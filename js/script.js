@@ -21,7 +21,7 @@ function makeHeading(headingContent) {
   return headingDOM;
 }
 
-makeHeading("hei");
+// makeHeading("hei");
 
 /**
  * Adds two numbers together
@@ -42,7 +42,7 @@ function addNumbers(a, b) {
   console.log(sum);
 }
 
-addNumbers(3, 3);
+// addNumbers(3, 3);
 
 const pet = {
   type: "Dog",
@@ -54,14 +54,14 @@ const pet = {
 localStorage.setItem("firstName", "Ola");
 
 const stringyPet = JSON.stringify(pet);
-console.log(stringyPet);
+// console.log(stringyPet);
 
 localStorage.setItem("object", stringyPet);
 
 const firstName = localStorage.getItem("object");
-console.log(firstName);
+// console.log(firstName);
 const enVariabel = JSON.parse(firstName);
-console.log(enVariabel);
+// console.log(enVariabel);
 
 // DESTRUCTURING
 
@@ -76,15 +76,74 @@ function generateGreeting(flight) {
   console.log(`Greetings to flight ${flightCode} from ${company}`);
 }
 
-generateGreeting(flight);
+// generateGreeting(flight);
 
-const person = {
-  firstName: "Ola",
-  lastName: "Nordmann",
-  country: "Norway",
+const coords = [12, 30, 5, 9, 100, 53];
+
+// 'x' is index 0 in the array
+// 'y' is index 1 in the array
+const [a, b, c] = coords;
+
+// console.log(a, b, c);
+// Logs:
+// 12 30
+
+// MAP
+
+const someMap = new Map();
+
+someMap.set(undefined, null);
+someMap.set("name", "Jørgen");
+someMap.set("age", 34);
+someMap.delete(undefined);
+
+console.log(someMap.size);
+
+console.log(someMap);
+
+// SET
+
+const mySet = new Set();
+
+mySet.add("Hei");
+mySet.add("hei");
+
+console.log(mySet);
+
+// JAVASCRIPT CLASSES
+
+const MGfacts = {
+  weight: 2500,
+  numWheels: 4,
+  numPassengers: 5,
 };
 
-const { firstName, lastName, country } = person;
+class Vehicle {
+  fuel = "Electrical";
+  pos = [0, 0, 0];
+  weight;
+  numWheels;
+  numPassengers;
 
-const greetings = `Hello i am ${firstName} ${lastName} from ${country}`;
-console.log(greetings);
+  constructor({ weight, numWheels, numPassengers }) {
+    this.weight = weight;
+    this.numWheels = numWheels;
+    this.numPassengers = numPassengers;
+  }
+
+  drive([x, y, z]) {
+    let [a, b, c] = this.pos;
+    a = a + x;
+    b = b + y;
+    c = c + z;
+    this.pos = [a, b, c];
+    console.log(`The vehicle is driving from ${a}, ${b}, ${c}`);
+
+    console.log("The vehicle is driving");
+  }
+}
+
+const MG = new Vehicle(MGfacts);
+console.log(MG);
+
+MG.drive([20, 12, 0]);
