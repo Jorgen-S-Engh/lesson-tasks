@@ -137,9 +137,8 @@ class Vehicle {
     b = b + y;
     c = c + z;
     this.pos = [a, b, c];
-    console.log(`The vehicle is driving from ${a}, ${b}, ${c}`);
-
     console.log("The vehicle is driving");
+    console.log(`The vehicle is driving from ${a}, ${b}, ${c}`);
   }
 }
 
@@ -147,3 +146,70 @@ const MG = new Vehicle(MGfacts);
 console.log(MG);
 
 MG.drive([20, 12, 0]);
+
+// MAP LESSON TASK
+const myMap = new Map();
+
+myMap.set(12, { firstName: "Ola", lastName: "Nordmann" });
+myMap.set(50, { firstName: "Kari", lastName: "Nordmann" });
+myMap.delete(12);
+
+console.log(myMap.size);
+
+// SET LESSON TASK
+
+//CLASSES LESSON TASK
+
+class Person {
+  firstName = "Ola";
+  lastName = "Nordmann";
+
+  speak() {
+    console.log(`Hello ${this.firstName} ${this.lastName}`);
+  }
+}
+
+const greet = new Person();
+
+greet.speak();
+
+//ARRAY METHODS
+
+const arrayValues = [5, 7, 9, 14];
+
+arrayValues.splice(0, 1, "fem");
+
+const newArr = arrayValues.slice();
+console.log(newArr);
+
+console.log(arrayValues);
+
+["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+  console.log(`${item} is at index ${index} in ${array}`);
+});
+
+newArr.forEach((item) => {
+  console.log(item);
+});
+
+newArr.forEach(function (item) {
+  console.log(item);
+});
+
+console.clear();
+
+// let users = [
+//   { id: 1, name: "John" },
+//   { id: 2, name: "Pete" },
+//   { id: 3, name: "Mary" },
+// ];
+
+// let user = users.find((item) => item.id == 1);
+
+// console.log(user.name); // John
+
+const values = [100, 200, 300, 400, 500];
+
+const newArray = values.map((element, index, array) => {});
+
+console.log(newArray);
